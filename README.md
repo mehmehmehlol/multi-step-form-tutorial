@@ -11,6 +11,11 @@ npm install
 npm start
 ```
 
+## Demo
+
+![Demo](src/screenshot/multi-step-demo.gif)
+
+
 Thanks for visiting this repository!
 
 
