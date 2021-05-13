@@ -2,7 +2,7 @@
 
 I created this to help me write the Medium article. 
 
-## Quick Stat
+## Quick Start
 ```
 # Install dependencies
 npm install
