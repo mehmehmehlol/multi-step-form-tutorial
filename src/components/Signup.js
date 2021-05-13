@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import UserDetails from './UserDetails'
 import PersonalDetails from './PersonalDetails'
-import Interest from './Interest'
 import Confirmation from './Confirmation'
+import Success from './Success'
 
 export default class Signup extends Component {
 
@@ -15,8 +15,6 @@ export default class Signup extends Component {
     lastName: '',
     country: '',
     levelOfEducation: '',
-    dateOfBirth: '',
-    interests: ''
   }
 
   // go back to previous step
@@ -38,8 +36,8 @@ export default class Signup extends Component {
 
   render() {
     const { step } = this.state;
-    const { email, username, password, firstName, lastName, country, levelOfEducation, dateOfBirth, interests } = this.state;
-    const values = { email, username, password, firstName, lastName, country, levelOfEducation, dateOfBirth, interests }
+    const { email, username, password, firstName, lastName, country, levelOfEducation } = this.state;
+    const values = { email, username, password, firstName, lastName, country, levelOfEducation }
     
     switch(step) {
       case 1: 
@@ -60,18 +58,16 @@ export default class Signup extends Component {
           />
         )
       case 3: 
-        return (
-          <Interest 
-            prevStep={ this.prevStep }
-            nextStep={ this.nextStep }
-            handleChange={ this.handleChange }
-          />
-        )
-      case 4: 
           return (
             <Confirmation 
               prevStep={ this.prevStep }
+              nextStep={ this.nextStep }
+              values={ values }
             />
+          )
+        case 4: 
+          return (
+            <Success />
           )
       default: 
           // do nothing
